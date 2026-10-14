@@ -7,7 +7,7 @@ use VENTOCOM\Core\Helpers;
 <section class="s-banner">
   <div class="s-banner-wrapper container">
     <div class="banner--txt">
-      <h1>Leve o Mais e Melhores Mercados para o seu território</h1>
+      <h1>Leve o Mais e Melhores Mercados para o seu <span>território</span></h1>
       <p>Formação com respaldo acadêmico da UFRGS e UERGS para fortalecer a comercialização de negócios comunitários,
         povos indígenas, comunidades quilombolas, agricultores familiares e extrativistas.</p>
 
