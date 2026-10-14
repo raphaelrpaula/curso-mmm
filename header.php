@@ -14,37 +14,37 @@
   <?php wp_body_open(); ?>
 
   <header class="header">
-    <div class="header-wrapper container" data-aos="fade-down">
+    <div class="header-wrapper container">
       <div class="header--logo logo">
         <?php if (has_custom_logo()) {
           the_custom_logo();
         } else { ?>
-        <a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a>
+          <a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a>
         <?php } ?>
       </div>
 
       <div class="header--menu">
         <nav class="main-menu">
           <?php if (has_nav_menu('main-menu')) {
-          wp_nav_menu(array(
-            'theme_location' => 'main-menu',
-            'container' => 'ul',
-            'menu_class' => 'menu-list',
-            'menu_id' => 'menu',
-            'fallback_cb' => false
-          ));
-        }
-        ?>
+            wp_nav_menu(array(
+              'theme_location' => 'main-menu',
+              'container' => 'ul',
+              'menu_class' => 'menu-list',
+              'menu_id' => 'menu',
+              'fallback_cb' => false
+            ));
+          }
+          ?>
         </nav>
       </div>
     </div>
 
     <div class="header-wrapper header-mobile container">
-      <div class="header--logo" data-aos="fade-down">
+      <div class="header--logo">
         <?php if (has_custom_logo()) {
           the_custom_logo();
         } else { ?>
-        <a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a>
+          <a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a>
         <?php } ?>
       </div>
 
@@ -61,14 +61,14 @@
             </div>
 
             <?php if (has_nav_menu('footer-menu')) {
-            wp_nav_menu(array(
-              'theme_location' => 'footer-menu',
-              'container' => 'ul',
-              'menu_class' => 'menu-list',
-              'menu_id' => 'menu-mobile',
-              'fallback_cb' => false
-            ));
-              }
+              wp_nav_menu(array(
+                'theme_location' => 'footer-menu',
+                'container' => 'ul',
+                'menu_class' => 'menu-list',
+                'menu_id' => 'menu-mobile',
+                'fallback_cb' => false
+              ));
+            }
             ?>
           </nav>
         </div>
@@ -76,4 +76,4 @@
     </div>
   </header>
 
-  <main class="main"></main>
+  <main class="main">

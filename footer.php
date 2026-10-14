@@ -1,10 +1,14 @@
+<?php
+
+use VENTOCOM\Core\Helpers;
+?>
+
 </main>
 
 <footer class="footer">
   <div class="footer-wrapper container">
-    <?php if (is_active_sidebar('footer-widgets')) {
-      dynamic_sidebar('footer-widgets');
-    } ?>
+    <img src="<?= Helpers::get_custom_logo_url(); ?>" alt="">
+    <p>© <?= date('Y'); ?> Mais e Melhores Mercados</p>
   </div>
 </footer>
 
