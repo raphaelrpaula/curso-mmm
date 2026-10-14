@@ -22,11 +22,24 @@
           color: $p-color;
         }
       }
+
+      @include d(t) {
+        flex-direction: column;
+        gap: 1.6rem;
+
+        p.subtitle {
+          max-width: 100%;
+        }
+      }
     }
 
     .curso--content {
       @include grid(2);
       grid-template-columns: 1fr 42.8rem;
+
+      @include d(m) {
+        grid-template-columns: 1fr;
+      }
 
       figure {
         position: relative;

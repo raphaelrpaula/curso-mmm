@@ -11235,12 +11235,12 @@ figure img {
   font-weight: 600;
 }
 .header-wrapper.header-mobile .header--menu .mobile-menu.open nav a.btn {
-  background-color: #2D3747;
+  color: #fff;
   display: block;
   text-align: center;
 }
 .header-wrapper.header-mobile .header--menu #btn-menu {
-  color: #fff;
+  color: #2D3747;
   display: block;
   border-top: 0.2rem solid;
   width: 2.4rem;
@@ -11290,6 +11290,11 @@ figure img {
   background-size: cover;
   background-position: center;
 }
+@media (max-width: 991px) {
+  .s-banner {
+    height: 91rem;
+  }
+}
 .s-banner:after {
   content: "";
   position: absolute;
@@ -11315,6 +11320,11 @@ figure img {
 }
 .s-banner-wrapper .banner--txt h1 span {
   color: #D3A017;
+}
+@media (max-width: 560px) {
+  .s-banner-wrapper .banner--txt h1 {
+    font-size: 4rem;
+  }
 }
 .s-banner-wrapper .banner--txt p {
   color: rgba(245, 241, 229, 0.7);
@@ -11374,6 +11384,15 @@ figure img {
 .s-curso-wrapper .section-title p.subtitle b {
   color: #2D3747;
 }
+@media (max-width: 991px) {
+  .s-curso-wrapper .section-title {
+    flex-direction: column;
+    gap: 1.6rem;
+  }
+  .s-curso-wrapper .section-title p.subtitle {
+    max-width: 100%;
+  }
+}
 .s-curso-wrapper .curso--content {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -11386,6 +11405,11 @@ figure img {
 }
 .s-curso-wrapper .curso--content {
   grid-template-columns: 1fr 42.8rem;
+}
+@media (max-width: 560px) {
+  .s-curso-wrapper .curso--content {
+    grid-template-columns: 1fr;
+  }
 }
 .s-curso-wrapper .curso--content figure {
   position: relative;
@@ -11495,6 +11519,16 @@ figure img {
 }
 .s-modulos-wrapper .modulos--itens {
   gap: 1.6rem;
+}
+@media (max-width: 991px) {
+  .s-modulos-wrapper .modulos--itens {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 560px) {
+  .s-modulos-wrapper .modulos--itens {
+    grid-template-columns: 1fr;
+  }
 }
 .s-modulos-wrapper .modulos--itens .modulo {
   background-color: rgba(255, 255, 255, 0.07);
@@ -11761,4 +11795,13 @@ figure img {
 .footer-wrapper p {
   color: #F5F1E5;
   font-size: 1.2rem;
+}
+@media (max-width: 560px) {
+  .footer-wrapper {
+    flex-direction: column;
+    gap: 1.6rem;
+  }
+  .footer-wrapper p {
+    text-align: center;
+  }
 }

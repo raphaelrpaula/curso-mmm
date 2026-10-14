@@ -39,7 +39,7 @@
               }
 
               a.btn {
-                background-color: $p-color;
+                color: #fff;
                 display: block;
                 text-align: center;
               }
@@ -48,7 +48,7 @@
         }
 
         #btn-menu {
-          color: #fff;
+          color: $p-color;
           display: block;
           border-top: 0.2rem solid;
           width: 2.4rem;

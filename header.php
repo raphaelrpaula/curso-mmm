@@ -49,23 +49,17 @@
       </div>
 
       <div class="header--menu">
-        <button id="btn-menu" aria-label="Abrir menu" aria-haspopup="true" aria-controls="menu" aria-expanded="false"
-          data-aos="fade-down">
-          <img src="<?= IMG_PATH_URL . '/icons/menu-burger.svg'; ?>" alt="" loading="lazy">
-        </button>
+        <button id="btn-menu" aria-label="Abrir menu" aria-haspopup="true" aria-controls="menu"
+          aria-expanded="false"></button>
 
-        <div class="mobile-menu">
+        <div class="mobile-menu" id="mobile-menu">
           <nav class="main-menu">
-            <div class="menu-top-header">
-              <img src="<?= IMG_PATH_URL . '/icons/cross.svg'; ?>" alt="" id="close-menu" loading="lazy">
-            </div>
-
-            <?php if (has_nav_menu('footer-menu')) {
+            <?php if (has_nav_menu('main-menu')) {
               wp_nav_menu(array(
-                'theme_location' => 'footer-menu',
+                'theme_location' => 'main-menu',
                 'container' => 'ul',
                 'menu_class' => 'menu-list',
-                'menu_id' => 'menu-mobile',
+                'menu_id' => 'menu',
                 'fallback_cb' => false
               ));
             }

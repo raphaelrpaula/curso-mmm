@@ -18,5 +18,14 @@
       color: $text-light;
       font-size: 1.2rem;
     }
+
+    @include d(m) {
+      flex-direction: column;
+      gap: 1.6rem;
+
+      p {
+        text-align: center;
+      }
+    }
   }
 }

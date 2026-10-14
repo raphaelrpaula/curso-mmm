@@ -18,6 +18,14 @@
       @include grid(4);
       gap: 1.6rem;
 
+      @include d(t) {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      @include d(m) {
+        grid-template-columns: 1fr;
+      }
+
       .modulo {
         background-color: rgba(#fff, 7%);
         padding: 2.4rem;

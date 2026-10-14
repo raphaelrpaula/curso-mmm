@@ -9,6 +9,10 @@
   background-size: cover;
   background-position: center;
 
+  @include d(t) {
+    height: 91rem;
+  }
+
   &:after {
     content: "";
     position: absolute;
@@ -41,6 +45,10 @@
 
         span {
           color: $t-color;
+        }
+
+        @include d(m) {
+          font-size: 4rem;
         }
       }
 
