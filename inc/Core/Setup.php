@@ -16,6 +16,8 @@ class Setup
     add_filter('gutenberg_use_widgets_block_editor', '__return_false', 100);
     add_filter('use_widgets_block_editor', '__return_false');
     add_filter('wpcf7_form_elements', [$this, 'vtc_wpcf7_remove_span_wrapper']);
+
+    new NavMenu();
   }
 
   public function theme_support()

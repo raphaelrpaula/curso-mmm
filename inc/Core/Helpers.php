@@ -21,15 +21,15 @@ class Helpers
     ob_start(); ?>
 
     <div class="section-title">
-
-      <?php if (!empty($options['hat'])) { ?>
-        <span class="hat"><?= esc_html($options['hat']); ?></span>
-      <?php } ?>
-
-      <h2><?= esc_html($options['title']); ?></h2>
+      <div class="title">
+        <?php if (!empty($options['hat'])) { ?>
+          <span class="hat"><?= esc_html($options['hat']); ?></span>
+        <?php } ?>
+        <h2><?= esc_html($options['title']); ?></h2>
+      </div>
 
       <?php if (!empty($options['subtitle'])) { ?>
-        <p class="subtitle"><?= esc_html($options['subtitle']); ?></p>
+        <p class="subtitle"><?= $options['subtitle']; ?></p>
       <?php } ?>
 
     </div>
@@ -114,7 +114,7 @@ class Helpers
       if ($icon_type === 'svg') {
         $html_icon = '<span class="icon-svg">' . self::get_svg($icon) . '</span>';
       } else {
-        $html_icon = '<i class="' . esc_attr($icon) . '"></i>';
+        $html_icon = '<i class="fa-solid fa-' . esc_attr($icon) . '"></i>';
       }
     }
 
@@ -252,7 +252,14 @@ class Helpers
 
   public static function get_custom_logo_url()
   {
-    $custom_logo_url = get_theme_mod('custom_footer_img');
-    return $custom_logo_url;
+    $custom_logo_id = get_theme_mod('custom_logo');
+    $image = wp_get_attachment_image_src($custom_logo_id, 'full');
+    return $image[0];
+  }
+
+  public static function get_footer_logo_url()
+  {
+    $footer_logo_url = get_theme_mod('custom_footer_img');
+    return $footer_logo_url;
   }
 }
