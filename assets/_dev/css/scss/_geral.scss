@@ -30,7 +30,7 @@ main {
 body {
   position: relative;
   font-size: 16px;
-  color: $text-color;
+  background-color: $text-light;
 }
 
 main {
@@ -60,7 +60,7 @@ h1 {
 }
 
 h2 {
-  font-size: 4rem;
+  font-size: 3.8rem;
 
   @include d(m) {
     font-size: 3.8rem;
@@ -80,7 +80,8 @@ h5 {
 }
 
 p {
-  line-height: 160%;
+  line-height: 140%;
+  color: $text-color;
 }
 
 p,
@@ -109,13 +110,47 @@ img {
   height: auto;
 }
 
+a {
+  display: block;
+  @include transition(0.3s);
+
+  &.btn {
+    padding: 1.4rem 2.8rem;
+    border-radius: 1000px;
+    background-color: $destaque;
+    font-weight: bold;
+    font-size: 1.4rem;
+
+    &.btn-icon {
+      color: $text-light;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.2rem;
+
+      i {
+        font-size: 1.2rem;
+        margin-top: 0.2rem;
+      }
+    }
+  }
+}
+
+button {
+  border: none;
+
+  &.btn {
+    @extend a, .btn;
+  }
+}
+
 .uppercase {
   text-transform: uppercase;
 }
 
 .container {
   width: 100%;
-  max-width: 1216px;
+  max-width: 1104px;
   margin: 0 auto;
 
   @include d(wt) {
@@ -131,4 +166,48 @@ img {
     max-width: 366px;
     padding: 0 24px;
   }
+}
+
+.section-title {
+  margin-bottom: 2.4rem;
+
+  .hat {
+    position: relative;
+    padding-top: 2.4rem;
+    display: block;
+    font-size: 1.1rem;
+    font-weight: bold;
+    letter-spacing: 1.32px;
+    margin-bottom: 1.6rem;
+    text-transform: uppercase;
+
+    &:before {
+      content: "";
+      width: 4rem;
+      height: 0.4rem;
+      position: absolute;
+      left: 0;
+      top: 0;
+      background-color: currentColor;
+    }
+  }
+
+  h2 {
+    color: $p-color;
+  }
+}
+
+figure {
+  overflow: hidden;
+  border-radius: 1.6rem;
+
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+.bg-green {
+  background-color: $s-color;
 }

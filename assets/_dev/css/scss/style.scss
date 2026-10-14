@@ -4,3 +4,13 @@
 
 // Geral
 @use "geral";
+
+@use "parts/header";
+@use "parts/header-mobile";
+@use "parts/banner";
+@use "parts/desafio";
+@use "parts/curso";
+@use "parts/modulos";
+@use "parts/contratacao";
+@use "parts/formulario";
+@use "parts/footer";

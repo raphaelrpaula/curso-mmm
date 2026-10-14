@@ -1,9 +1,11 @@
 @use "json-vars" as *;
 
 $p-color: $colors-p-color;
+$s-color: $colors-s-color;
+$t-color: $colors-t-color;
 $destaque: $colors-destaque;
 $destaque-light: $colors-destaque-light;
-$text-color: $colors-text-color;
+$text-color: rgba($p-color, 0.5);
 $text-light: $colors-text-light;
 $gray: $colors-gray;
 $border: $colors-border;
@@ -47,7 +49,7 @@ $attention: $colors-attention;
 @mixin grid($grid) {
   display: grid;
   grid-template-columns: repeat($grid, 1fr);
-  gap: 32px;
+  gap: 2.4rem;
   @include d(m) {
     grid-template-columns: 1fr;
   }

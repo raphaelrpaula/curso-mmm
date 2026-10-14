@@ -1,3 +1,22 @@
+@use "./config" as *;
+
 .footer {
-  background-color: $p-color;
+  background-color: $s-color;
+
+  &-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2.4rem 0;
+
+    img {
+      max-height: 2.8rem;
+      filter: brightness(0) invert(1);
+    }
+
+    p {
+      color: $text-light;
+      font-size: 1.2rem;
+    }
+  }
 }

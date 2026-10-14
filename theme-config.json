@@ -1,10 +1,12 @@
 {
   "colors": {
-    "p-color": "#183A67",
-    "destaque": "#51AC32",
+    "p-color": "#2D3747",
+    "s-color": "#2D6A4F",
+    "t-color": "#D3A017",
+    "destaque": "#E76F51",
     "destaque-light": "#EDF3EF",
     "text-color": "#5A7393",
-    "text-light": "#BAC4D1",
+    "text-light": "#F5F1E5",
     "gray": "#E8EEF6",
     "border": "#E3E7ED",
     "border-dark": "#2F4E76",

@@ -1,0 +1,73 @@
+@use "./config" as *;
+
+.s-banner {
+  width: 100vw;
+  height: 100vh;
+  min-height: 91rem;
+  position: relative;
+  background: url("../img/banner-img.webp") no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  &:after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(
+      157.41deg,
+      rgba(13, 31, 20, 0.96) 0%,
+      rgba(26, 61, 40, 0.91) 50%,
+      rgba(34, 80, 57, 0.8) 75%,
+      rgba(45, 106, 79, 0.69) 100%
+    );
+    z-index: 0;
+  }
+
+  &-wrapper {
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    .banner--txt {
+      max-width: 56rem;
+
+      h1 {
+        color: $text-light;
+        margin-bottom: 2.4rem;
+        font-style: italic;
+
+        span {
+          color: $t-color;
+        }
+      }
+
+      p {
+        color: rgba($text-light, 70%);
+        line-height: 28px;
+        margin-bottom: 3.6rem;
+      }
+
+      a.btn {
+        margin-bottom: 3.2rem;
+        background-color: $destaque;
+      }
+
+      .publico-alvo {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.8rem;
+
+        .item {
+          font-size: 1.2rem;
+          padding: 0.6rem 1.2rem;
+          color: $text-light;
+          border: 1px solid $text-light;
+          border-radius: 1000px;
+        }
+      }
+    }
+  }
+}

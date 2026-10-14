@@ -1,0 +1,148 @@
+@use "./config" as *;
+
+.s-curso {
+  margin-bottom: 9.6rem;
+
+  &-wrapper {
+    .section-title {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-bottom: 4.8rem;
+
+      .hat {
+        color: $s-color;
+      }
+
+      p.subtitle {
+        max-width: 53.2rem;
+        font-size: 1.4rem;
+
+        b {
+          color: $p-color;
+        }
+      }
+    }
+
+    .curso--content {
+      @include grid(2);
+      grid-template-columns: 1fr 42.8rem;
+
+      figure {
+        position: relative;
+
+        &:after {
+          content: "";
+          position: absolute;
+          inset: 0;
+          background-image: linear-gradient(
+            to right,
+            rgba(45, 106, 79, 0.38),
+            rgba(45, 106, 79, 0)
+          );
+          z-index: 0;
+        }
+
+        p {
+          position: absolute;
+          bottom: 2.4rem;
+          left: 2.4rem;
+          color: $text-light;
+          font-size: 1.4rem;
+          font-weight: 600;
+          max-width: 202px;
+          z-index: 1;
+        }
+      }
+
+      .txt {
+        display: flex;
+        flex-direction: column;
+        gap: 1.6rem;
+
+        .item {
+          background-color: #fff;
+          padding: 2rem;
+          border-radius: 1.6rem;
+          display: flex;
+          align-items: center;
+          gap: 1.6rem;
+
+          .icon {
+            width: 4.8rem;
+            height: 4.8rem;
+            border-radius: 1.2rem;
+            background-color: rgba(#2d9b67, 9.4%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex: none;
+
+            span {
+              font-weight: 900;
+              font-size: 1.4rem;
+            }
+
+            div {
+              display: block;
+              width: 2rem;
+              height: 0.2rem;
+              background-color: #2d9b67;
+            }
+          }
+
+          .item--txt {
+            p.title {
+              color: $p-color;
+              font-weight: bold;
+              margin-bottom: 0.4rem;
+            }
+          }
+
+          &:nth-child(2) {
+            .icon {
+              background-color: rgba($destaque, 9.4%);
+
+              span {
+                color: $destaque;
+              }
+            }
+          }
+
+          &:nth-child(3) {
+            .icon {
+              background-color: rgba($t-color, 9.4%);
+
+              span {
+                color: $t-color;
+              }
+            }
+          }
+
+          &.destaque {
+            background-color: $s-color;
+
+            .icon {
+              background-color: rgba(#fff, 12.5%);
+              border-radius: 50%;
+
+              i {
+                color: $t-color;
+              }
+            }
+
+            .item--txt {
+              p {
+                color: rgba($text-light, 0.44);
+
+                &.title {
+                  color: $t-color;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

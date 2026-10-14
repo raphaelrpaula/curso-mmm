@@ -1,0 +1,63 @@
+@use "./config" as *;
+
+.s-modulos {
+  padding: 9.6rem 0;
+
+  &-wrapper {
+    .section-title {
+      .hat {
+        color: $t-color;
+      }
+
+      h2 {
+        color: $text-light;
+      }
+    }
+
+    .modulos--itens {
+      @include grid(4);
+      gap: 1.6rem;
+
+      .modulo {
+        background-color: rgba(#fff, 7%);
+        padding: 2.4rem;
+        border-radius: 1.6rem;
+
+        display: flex;
+        flex-direction: column;
+        gap: 1.2rem;
+
+        &:last-child {
+          background-color: $text-light;
+
+          .pos,
+          p.title {
+            color: $p-color;
+          }
+
+          p {
+            color: rgba($p-color, 50%);
+          }
+        }
+
+        .pos,
+        p.title {
+          color: $text-light;
+        }
+
+        .pos {
+          font-size: 1.1rem;
+          font-weight: 900;
+        }
+
+        p {
+          color: rgba($text-light, 0.6);
+
+          &.title {
+            font-weight: bold;
+          }
+        }
+      }
+    }
+  }
+}

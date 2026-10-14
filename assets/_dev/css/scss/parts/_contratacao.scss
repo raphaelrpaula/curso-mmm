@@ -1,0 +1,86 @@
+@use "./config" as *;
+
+.s-contratacao {
+  padding-bottom: 9.6rem;
+
+  &-wrapper {
+    @include grid(2);
+
+    .contratacao--txt {
+      .section-title {
+        .hat {
+          color: $t-color;
+        }
+
+        h2 {
+          color: $text-light;
+          margin-bottom: 1.6rem;
+        }
+
+        p {
+          color: rgba($text-light, 50%);
+        }
+      }
+
+      .passos,
+      .passos .passo,
+      .passos .passo .pos {
+        display: flex;
+      }
+
+      .passos {
+        margin-bottom: 3.2rem;
+        flex-direction: column;
+        gap: 2rem;
+
+        .passo {
+          align-items: flex-start;
+          gap: 1.6rem;
+
+          .pos {
+            color: $text-light;
+            font-weight: bold;
+            width: 3.2rem;
+            height: 3.2rem;
+            align-items: center;
+            justify-content: center;
+            background-color: $t-color;
+            border-radius: 50%;
+            flex: none;
+            font-size: 1.4rem;
+          }
+
+          &:nth-child(2) {
+            .pos {
+              background-color: $destaque;
+            }
+          }
+          &:nth-child(3) {
+            .pos {
+              background-color: #2d9b67;
+            }
+          }
+          &:nth-child(4) {
+            .pos {
+              background-color: $text-light;
+              color: $p-color;
+            }
+          }
+
+          .passo--txt {
+            p {
+              font-size: 1.4rem;
+              color: rgba($text-light, 50%);
+
+              &.title {
+                font-size: 1.6rem;
+                color: $text-light;
+                font-weight: bold;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
