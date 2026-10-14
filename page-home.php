@@ -16,11 +16,11 @@ use VENTOCOM\Core\Helpers;
       ]) ?>
 
       <div class="publico-alvo">
-        <div class="item">Negócios comunitários</div>
-        <div class="item">Povos indígenas</div>
-        <div class="item">Comunidades quilombolas</div>
-        <div class="item">Agricultores familiares</div>
-        <div class="item">Extrativistas</div>
+        <span class="item">Negócios comunitários</span>
+        <span class="item">Povos indígenas</span>
+        <span class="item">Comunidades quilombolas</span>
+        <span class="item">Agricultores familiares</span>
+        <span class="item">Extrativistas</span>
       </div>
     </div>
   </div>
@@ -40,13 +40,13 @@ use VENTOCOM\Core\Helpers;
     </div>
     <div class="desafio--img">
       <figure>
-        <img src="<?= IMG_PATH_URL . 'img/img-desafio.webp'; ?>" alt="">
+        <img src="<?= IMG_PATH_URL . '/img-desafio.webp'; ?>" alt="">
       </figure>
     </div>
   </div>
 </section>
 
-<section class="s-curso">
+<section class="s-curso" id="curso">
   <div class="s-curso-wrapper container">
     <?= Helpers::get_section_title([
       'hat' => 'O curso',
@@ -56,29 +56,42 @@ use VENTOCOM\Core\Helpers;
 
     <div class="curso--content">
       <figure>
-        <img src="<?= IMG_PATH_URL . 'img/img-curso.webp'; ?>" alt="">
+        <p>Módulos organizados do entendimento de mercados até território e governança</p>
+        <img src="<?= IMG_PATH_URL . '/img-curso.webp'; ?>" alt="">
       </figure>
 
       <div class="txt">
         <div class="item">
+          <div class="icon">
+            <div></div>
+          </div>
           <div class="item--txt">
             <p class="title">horas</p>
             <p>Carga horária total</p>
           </div>
         </div>
         <div class="item">
+          <div class="icon">
+            <span>7</span>
+          </div>
           <div class="item--txt">
             <p class="title">módulos</p>
             <p>Conteúdo estruturado</p>
           </div>
         </div>
         <div class="item">
+          <div class="icon">
+            <span>100%</span>
+          </div>
           <div class="item--txt">
             <p class="title">prático</p>
             <p>Plano de ação próprio</p>
           </div>
         </div>
         <div class="item destaque">
+          <div class="icon">
+            <i class="fa-regular fa-star"></i>
+          </div>
           <div class="item--txt">
             <p class="title">Certificação pela UFRGS</p>
             <p>Emitida ao final da formação</p>
@@ -99,7 +112,7 @@ use VENTOCOM\Core\Helpers;
 
   $query = new WP_Query($args);
   if ($query->have_posts()) { ?>
-    <div class="s-modulos">
+    <div class="s-modulos" id="modulos">
       <div class="s-modulos-wrapper container">
         <?= Helpers::get_section_title([
           'hat' => 'Conteúdo',
@@ -113,7 +126,7 @@ use VENTOCOM\Core\Helpers;
             $query->the_post();
           ?>
             <div class="modulo">
-              <span class="pos"><?= $i < 5 ? '0' . $i : '+'; ?></span>
+              <span class="pos"><?= $i < 10 ? '0' . $i : '+'; ?></span>
               <p class="title"><?= get_the_title(); ?></p>
               <p><?= get_the_content(); ?></p>
             </div>
@@ -126,7 +139,7 @@ use VENTOCOM\Core\Helpers;
     </div>
   <?php } ?>
 
-  <div class="s-contratacao">
+  <div class="s-contratacao" id="contratacao">
     <div class="s-contratacao-wrapper container">
       <div class="contratacao--txt">
         <?= Helpers::get_section_title([
@@ -158,7 +171,7 @@ use VENTOCOM\Core\Helpers;
             </div>
           </div>
           <div class="passo">
-            <span class="pos">1</span>
+            <span class="pos">4</span>
             <div class="passo--txt">
               <p class="title">Formação e certificação</p>
               <p>Seu território recebe a formação completa com suporte acadêmico.</p>
@@ -173,17 +186,17 @@ use VENTOCOM\Core\Helpers;
 
       <div class="contratacao--img">
         <figure>
-          <img src="<?= IMG_PATH_URL . 'img/img-contratacao.webp'; ?>" alt="">
+          <img src="<?= IMG_PATH_URL . '/img-contratacao.webp'; ?>" alt="">
         </figure>
       </div>
     </div>
   </div>
 </section>
 
-<section class="s-formulario">
+<section class="s-formulario" id="formulario">
   <div class="s-formulario-wrapper container">
     <div class="formulario--txt">
-      <img src="<?= Helpers::get_custom_logo_url(); ?>" alt="">
+      <img src="<?= Helpers::get_footer_logo_url(); ?>" alt="">
 
       <?= Helpers::get_section_title([
         'title' => 'Vamos fortalecer o seu território?'
@@ -194,6 +207,7 @@ use VENTOCOM\Core\Helpers;
     </div>
 
     <div class="formulario--form">
+      <h6>Solicite sua proposta</h6>
       <?= do_shortcode('[contact-form-7 id="5d0223e" title="Solicitar proposta"]'); ?>
     </div>
   </div>
