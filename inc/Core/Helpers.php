@@ -1,25 +1,41 @@
 <?php
 
-namespace RDG\Core;
+namespace VENTOCOM\Core;
 
 class Helpers
 {
-  public static function get_section_title($hat, $title, $subtitle = ""): string
+  public static function get_section_title(array $args = []): string
   {
-    if (empty($title)) return '';
+    $defaults = [
+      'hat'      => '',
+      'title'    => '',
+      'subtitle' => ''
+    ];
+
+    $options = wp_parse_args($args, $defaults);
+
+    if (empty($options['title'])) {
+      return '';
+    }
+
     ob_start(); ?>
 
     <div class="section-title">
-      <?php if ($hat) { ?>
-        <span class="hat"><?= esc_html($hat); ?></span>
+
+      <?php if (!empty($options['hat'])) { ?>
+        <span class="hat"><?= esc_html($options['hat']); ?></span>
       <?php } ?>
-      <h2><?= $title; ?></h2>
-      <?php if ($subtitle) { ?>
-        <p class="subtitle"><?= esc_html($subtitle); ?></p>
+
+      <h2><?= esc_html($options['title']); ?></h2>
+
+      <?php if (!empty($options['subtitle'])) { ?>
+        <p class="subtitle"><?= esc_html($options['subtitle']); ?></p>
       <?php } ?>
+
     </div>
 
-<?php return ob_get_clean();
+<?php
+    return ob_get_clean();
   }
 
   /**
@@ -234,43 +250,9 @@ class Helpers
     );
   }
 
-  /**
-   * Retorna as filiais da Frigelar, contidas no arquivo /assets/json/filiais.json.
-   * @return array Lista de redes sociais filtradas.
-   */
-  public static function get_filiais(): array
+  public static function get_custom_logo_url()
   {
-    static $filiais_data = null;
-    if ($filiais_data !== null) {
-      return $filiais_data;
-    }
-
-    $filiais_path = get_template_directory() . '/assets/json/filiais.json';
-
-    if (!file_exists($filiais_path)) {
-      return [];
-    }
-
-    $filiais = json_decode(file_get_contents($filiais_path), true);
-
-    if (empty($filiais['filiais']) || !is_array($filiais['filiais'])) {
-      return [];
-    }
-
-    $filiais_data = [];
-
-    foreach ($filiais['filiais'] as $slug => $data) {
-      $endereco = $data['endereco'] ?? '';
-      $estado    = $data['estado'] ?? '';
-
-      if (!empty($endereco)) {
-        $filiais_data[$slug] = [
-          'endereco' => ucwords(mb_strtolower($endereco)),
-          'estado' => !empty($estado) ? ucwords(mb_strtolower($estado)) : '',
-        ];
-      }
-    }
-
-    return $filiais_data;
+    $custom_logo_url = get_theme_mod('custom_footer_img');
+    return $custom_logo_url;
   }
 }

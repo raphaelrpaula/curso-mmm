@@ -85,9 +85,7 @@ export function jsonToSass() {
 
 export function browserSync() {
   browser_sync.init({
-    server: {
-      baseDir: "./",
-    },
+    proxy: "cursommm.produtores-unidos.test",
   });
 }
 
