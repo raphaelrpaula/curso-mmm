@@ -11,7 +11,7 @@ use VENTOCOM\Core\Helpers;
       <p>Formação com respaldo acadêmico da UFRGS e UERGS para fortalecer a comercialização de negócios comunitários,
         povos indígenas, comunidades quilombolas, agricultores familiares e extrativistas.</p>
 
-      <?= Helpers::get_button('Quero levar o curso para minha região', '#', [
+      <?= Helpers::get_button('Quero levar o curso para minha região', '#formulario', [
         'icon' => 'arrow-right',
       ]) ?>
 
@@ -179,7 +179,7 @@ use VENTOCOM\Core\Helpers;
           </div>
         </div>
 
-        <?= Helpers::get_button('Solicitar proposta', '#', [
+        <?= Helpers::get_button('Solicitar proposta', '#formulario', [
           'icon' => 'arrow-right',
         ]); ?>
       </div>
